@@ -4,11 +4,11 @@ import multiprocessing
 command = "lsblk -o NAME -n -d | awk '/^sd/ {print $1}'"
 output = subprocess.check_output(command, shell=True, text=True).splitlines()
 
-dontwipe = "/dev/" + input("Select the disk you don't want to be wiped: ")
+dontwipe = "/dev/sda"
 
 disks = []
 for disk in output:
-    if disk != dontwipe:
+    if "/dev" + disk != dontwipe:
         disks.append("/dev/" + disk)
 
 
