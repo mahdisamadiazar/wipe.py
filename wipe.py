@@ -8,7 +8,7 @@ dontwipe = "/dev/sda"
 
 disks = []
 for disk in output:
-    if "/dev" + disk != dontwipe:
+    if "/dev/" + disk != dontwipe:
         disks.append("/dev/" + disk)
 
 
